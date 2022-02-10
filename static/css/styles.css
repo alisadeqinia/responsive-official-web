@@ -26,17 +26,18 @@ a {
     padding-bottom: 20px;
     background-color: #a88c95;
     margin-right: auto;
+    position: relative;
 }
 .top-header-area .inner-header-content {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     width: 80%;
     margin: 0 auto;
 }
 .top-header-area .social-links {
-    width: 220px;
+    width: 50%;
 }
 .top-header-area .social-links ul {
     margin: 0;
@@ -47,6 +48,9 @@ a {
 }
 .top-header-area .social-links ul li {
     margin-right: 10px;
+}
+.top-header-area .social-links .rwd-box {
+    display: none;
 }
 .top-header-area .social-links ul li a {
     background-color: #cbc7c9;
@@ -64,11 +68,11 @@ a {
 }
 .top-header-area .search-area {
     width: 300px;
+    display: flex;
 }
 .top-header-area .search-area form {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
 }
 .top-header-area .search-area input[type='text'] {
     background-color: #fff;
@@ -121,7 +125,7 @@ a {
     transition: 0.5s;
     display: inline-block;
 }
-.navbar li a:hover{background-color: #6a3144;}
+.navbar li:hover{background-color: #6a3144;}
 .navbar .drop-down {
     position: relative;
     display: inline-block;
@@ -130,7 +134,7 @@ a {
     display: none;
     position: absolute;
     top: 100%;
-    z-index: 2;
+    z-index: 20;
     width: calc(100% + 30px);
     text-align: left;
     background-color: #97455f;
@@ -139,6 +143,14 @@ a {
 .drop-down:hover .drop-down-content {
     display: flex;
     flex-direction: column;
+}
+#closeNav {
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 90%;
+    display: none;
+    cursor: pointer;
 }
 
 /* Swiper area */
@@ -205,7 +217,9 @@ body > div > div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-h
     font-size: 3rem;
     font-weight: 400;
 }
-.services p {
+.services .description {
+    width: 70%;
+    text-align: center;
     color: #333;
     font-size: 1.12rem;
     margin-bottom: 20px;
@@ -238,7 +252,7 @@ body > div > div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-h
     text-transform: uppercase;
     z-index: 1;
 }
-.card p:not(.back-text){
+.card .card-text {
     display: block; /* Fallback for non-webkit */
     display: -webkit-box;
     height: 75px; /* Fallback for non-webkit, line-height * 2 */
@@ -301,7 +315,6 @@ footer form textarea {
     max-height: 125px;
     resize: none;
     overflow: auto;
-    margin: 15px 0;
 }
 footer form input[type="submit"] {
     background-color: #97455f;
@@ -321,4 +334,101 @@ footer img {
     top: 0;
     left: 0;
     object-fit: cover;
+}
+
+/* make responsive */
+@media screen and (max-width: 1070px) {
+    .services .card {
+        padding: 17% 9% 13% 15%;
+        width: 50%;
+    }
+    .cards .back-text {
+        top: 10%;
+        left: 5%;
+        font-size: 5rem;
+    }
+}
+@media screen and (max-width: 725px){
+    .top-header-area .social-links .rwd-box {
+        display: flex;
+    }
+    .top-header-area .social-links #social-icons {
+        display: none;
+        position: absolute;
+        top: 54px;
+        left: 34px;
+        z-index: 2;
+        background-color: #97455f;
+        padding: 10px 0 10px 10px;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .5);
+    }
+    .navbar {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        text-align: left;
+        width: 40%;
+        z-index: 2;
+        transition: all .8s;
+        padding: 5px 0;
+        font-size: .6rem;
+    }
+    .navbar li {
+        width: 100%;
+        transition: .8s;
+    }
+    .navbar li:hover{background-color: #6a3144;}
+    .navbar .drop-down-content {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        z-index: 1;
+        width: 70%;
+        background-color: #97455f;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .5);
+    }
+    #closeNav {
+        top: 10px;
+        left: 90%;
+        display: inline;
+    }
+    .top-header-area .search-area input[type='text'], input[type='submit'] {
+        font-size: 10px;
+    }
+    .top-header-area .search-area input[type='submit'] {
+        font-size: 10px;
+    }
+    .intro {
+        display: block;
+    }
+    .intro article {
+        width: 100%;
+    }
+    .intro img {
+        display: none;
+    }
+    footer form input, textarea {
+        font-size: .7rem;
+        padding: 10px 5px;
+        margin: 7px 0;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .services .cards {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .services .cards .card {
+        width: 70%;
+        padding: 17% 9% 13% 15%;
+    }
+    .cards .back-text {
+        top: 10%;
+        left: 5%;
+        font-size: 3rem;
+    }
 }
