@@ -125,7 +125,7 @@ a {
     transition: 0.5s;
     display: inline-block;
 }
-.navbar li:hover{background-color: #6a3144;}
+.navbar li:hover {background-color: #6a3144;}
 .navbar .drop-down {
     position: relative;
     display: inline-block;
@@ -144,6 +144,7 @@ a {
     display: flex;
     flex-direction: column;
 }
+.navbar .drop-down-content a:hover {background-color: #6a3144;}
 #closeNav {
     color: #fff;
     position: absolute;

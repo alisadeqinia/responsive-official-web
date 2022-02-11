@@ -1,3 +1,7 @@
+<!-- This web design provides by Ali Sadeqinia
+based on a PSD from "learn with ali hossain" youtube channel
+https://alisadeqinia.github.io -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +15,14 @@
     <link rel="stylesheet" href="static/css/swiper-bundle.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
     rel="stylesheet">
-    <title>First try</title>
+    <title>First try turn PSD to Website</title>
 </head>
 <body onresize="checkSize()">
     <header>
+<!-- top bar for icons and search box -->
         <section class="top-header-area">
             <div class="inner-header-content">
+<!-- social icon area -->
                 <div class="social-links">
                     <ul class="rwd-box">
                         <li class="bars" onclick="showNavbar()"><a href="javascript: void(0)"><i class="fas fa-bars"></i></a></li>
@@ -32,6 +38,7 @@
                         <li><a href=""><i class="fas fa-rss"></i></a></li>
                     </ul>
                 </div>
+<!-- search box area -->
                 <div class="search-area">
                     <form action="#" method="get">
                         <input type="text" placeholder="Search Our Website...">
@@ -40,7 +47,7 @@
                 </div>
             </div>
         </section>
-        <!-- Navbar -->
+<!-- Navbar -->
         <ul class="navbar" id="navbar">
             <li><a href="">HOME</a></li>
             <li><a href="">STYLE DEMO</a></li>
@@ -59,7 +66,7 @@
             <em id="closeNav" onclick="hideNavbar()"><i class="fas fa-times"></i></em>
         </ul>
     </header>
-    <!-- Swiper -->
+<!-- Swiper -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide"><img src="static/images/1.jpg" alt="middle picture"></div>
@@ -67,7 +74,7 @@
         </div>
         <div class="swiper-pagination"></div>
     </div>
-    <!-- middle section: intro -->
+<!-- middle section: intro -->
     <section class="intro">
         <article>
             <h3>Who We Are</h3>
@@ -78,7 +85,7 @@
         </article>
         <img src="static/images/2.jpg" alt="intro">
     </section>
-    <!-- middle section: services -->
+<!-- middle section: services -->
     <section class="services">
         <h2>Our Service</h2>
         <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -115,6 +122,7 @@
             </div>
         </div>
     </section>
+<!-- footer area -->
     <footer>
         <h2>Quick Contact</h2>
         <form action="#" method="post">
@@ -128,6 +136,7 @@
         </form>
     </footer>
 
+<!-- scripts for make toggle buttons and control menus -->
     <script>
         function showNavbar() {
             const navbar = document.getElementById("navbar");
@@ -153,6 +162,7 @@
                 navbar.style.display = "none";
             }
         }
+// create toggles with js makes some issues! when screen crossed breakpoint, menus doesn't back to suitable view
         function checkSize() {
             var x = window.matchMedia("(max-width: 725px)")
             if (x.matches) {
